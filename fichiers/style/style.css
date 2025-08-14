@@ -3,3 +3,8 @@
 * {
     font-family: 'Poppins';
 }
+
+body {
+    background-color: white;
+    scrollbar-color: rgb(222, 227, 255);
+}
