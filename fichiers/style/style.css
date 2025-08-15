@@ -4,7 +4,19 @@
     font-family: 'Poppins';
 }
 
-body {
-    background-color: white;
+body.welcome {
+    color: white;
+    background-color: rgb(0,0,83);
     scrollbar-color: rgb(222, 227, 255);
+}
+body.welcome a {
+    color:rgb(153, 163, 255);
+    text-decoration: none;
+}
+body.welcome a:hover {
+    color:rgb(128, 141, 254);
+}
+
+body {
+    background-color: aliceblue;
 }
