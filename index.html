@@ -11,11 +11,35 @@
     </head>
 
     <body class="welcome">
-        <p>Bievenue au Studio !</p>
-        <ul>
-            <li><a href="pieces/salon/">Sonner et entrer<a></li> <!-- Entrer sur le site -->
-            <li><a href="pieces/cuisine/">Fouiller le courrier</a></li> <!-- Consulter les nouveautés/actualités -->
-            <li><a href="chambres/ma-chambre">Laisser une lettre</a></li> <!-- Prendre contact avec moi -->
-        </ul>
+        <div class="entrance-container">
+            <h1 class="welcome-title">Bienvenue au Studio !</h1>
+            <p class="welcome-subtitle">Choisissez votre action pour entrer dans l'univers d'Anto</p>
+
+            <ul class="actions-list">
+                <li class="action-item">
+                    <a href="pieces/salon/" class="action-link">
+                        <i class="fas fa-door-open action-icon"></i>
+                        <span>Sonner et entrer</span>
+                    </a>
+                </li>
+                <li class="action-item">
+                    <a href="pieces/cuisine/" class="action-link">
+                        <i class="fas fa-envelope-open-text action-icon"></i>
+                        <span>Fouiller le courrier</span>
+                    </a>
+                </li>
+                <li class="action-item">
+                    <a href="chambres/ma-chambre/" class="action-link">
+                        <i class="fas fa-pen-fancy action-icon"></i>
+                        <span>Laisser une lettre</span>
+                    </a>
+                </li>
+            </ul>
+
+            <p class="hint">
+                <i class="fas fa-info-circle"></i> 
+                Ce site est une expérience immersive. Chaque pièce correspond à une section de mon portfolio.
+            </p>
+        </div>
     </body>
 </html>
