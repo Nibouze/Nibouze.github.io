@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Rôle | BIGG BDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bordeaux: #800000; --bordeaux-light: #a52a2a; }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .text-bordeaux { color: var(--bordeaux); }
+        .btn-bordeaux { background-color: var(--bordeaux); color: white; transition: all 0.3s; cursor: pointer; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
+    <!-- Navbar identique à index.html -->
+    <main class="flex-grow">
+        <div class="bg-bordeaux py-20 text-white text-center">
+            <h1 class="text-5xl font-black italic uppercase">Le Bureau & Notre Rôle</h1>
+        </div>
+        <section class="container mx-auto px-4 -mt-12 mb-20">
+            <div class="bg-white p-10 rounded-[40px] shadow-2xl">
+                <h2 class="text-2xl font-black uppercase italic mb-10 text-bordeaux text-center">L'équipe 2024-2025</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Membre 1 -->
+                    <div class="text-center group">
+                        <div class="aspect-[3/4] bg-slate-100 rounded-2xl mb-4 overflow-hidden border-2 border-transparent group-hover:border-bordeaux transition-all">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+                        </div>
+                        <p class="font-black uppercase text-sm">Nom Prénom</p>
+                        <p class="text-[10px] text-bordeaux font-bold uppercase">Présidence</p>
+                    </div>
+                    <!-- Membre 2 -->
+                    <div class="text-center group">
+                        <div class="aspect-[3/4] bg-slate-100 rounded-2xl mb-4 overflow-hidden border-2 border-transparent group-hover:border-bordeaux transition-all">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+                        </div>
+                        <p class="font-black uppercase text-sm">Nom Prénom</p>
+                        <p class="text-[10px] text-bordeaux font-bold uppercase">Trésorerie</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto px-4 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-black italic uppercase mb-6">Fédérer & Défendre</h2>
+                    <p class="text-slate-600 mb-6 italic leading-relaxed">Nous représentons les étudiants de Bourg auprès de l'Université Lyon 1. Membre de GAELIS, nous luttons pour vos droits et gérons l'épicerie solidaire AGORA.</p>
+                </div>
+                <div class="rounded-[40px] overflow-hidden shadow-2xl rotate-2">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

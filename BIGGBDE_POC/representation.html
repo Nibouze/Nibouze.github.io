@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagement Étudiant | BIGG BDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bordeaux: #800000; --bordeaux-light: #a52a2a; }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .text-bordeaux { color: var(--bordeaux); }
+        .btn-bordeaux { background-color: var(--bordeaux); color: white; transition: all 0.3s; }
+        .btn-bordeaux:hover { background-color: var(--bordeaux-light); transform: translateY(-2px); }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
+    <nav class="bg-bordeaux text-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="BIGG_BDE.png" alt="BIGG" class="h-12 w-12 rounded-full border-2 border-white bg-white">
+                <span class="font-black text-2xl tracking-tighter uppercase italic">BIGG BDE</span>
+            </a>
+            <ul class="hidden lg:flex gap-4 font-bold uppercase text-sm">
+                <li><a href="index.html" class="px-3 py-2 transition hover:opacity-75">Accueil</a></li><li><a href="evenements.html" class="px-3 py-2 transition hover:opacity-75">Événements</a></li><li><a href="actu.html" class="px-3 py-2 transition hover:opacity-75">Actu</a></li><li><a href="partenariats.html" class="px-3 py-2 transition hover:opacity-75">Partenariats</a></li><li><a href="representation.html" class="px-3 py-2 transition border-b-2 border-white">Représentation</a></li><li><a href="liens.html" class="px-3 py-2 transition hover:opacity-75">Liens</a></li><li><a href="contact.html" class="px-3 py-2 transition hover:opacity-75">Contact</a></li>
+            </ul>
+            <button class="lg:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-red-950 p-4 space-y-4 text-center border-t border-red-900">
+            <li><a href="index.html" class="block py-3 transition hover:opacity-75">Accueil</a></li><li><a href="evenements.html" class="block py-3 transition hover:opacity-75">Événements</a></li><li><a href="actu.html" class="block py-3 transition hover:opacity-75">Actu</a></li><li><a href="partenariats.html" class="block py-3 transition hover:opacity-75">Partenariats</a></li><li><a href="representation.html" class="block py-3 transition border-b-2 border-white">Représentation</a></li><li><a href="liens.html" class="block py-3 transition hover:opacity-75">Liens</a></li><li><a href="contact.html" class="block py-3 transition hover:opacity-75">Contact</a></li>
+        </div>
+    </nav>
+    <main class="flex-grow">
+<div class="bg-bordeaux py-24 text-white text-center">
+    <h1 class="text-5xl font-black italic uppercase">Représentation & Engagement</h1>
+</div>
+<div class="container mx-auto px-4 -mt-12 mb-20">
+    <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-12 bg-white p-10 rounded-3xl shadow-xl">
+            <section>
+                <h2 class="text-3xl font-black text-bordeaux mb-6 uppercase">Ton BDE au sein de GAELIS</h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                    Le BIGG BDE n'est pas seul. Nous sommes membres actifs de <strong>GAELIS</strong>, la fédération lyonnaise qui regroupe plus de 30 associations. Ce réseau nous permet de peser dans les décisions de l'Université Lyon 1 et de défendre les spécificités du campus de Bourg-en-Bresse.
+                </p>
+                <div class="bg-slate-50 border-l-8 border-bordeaux p-6 rounded-r-xl italic text-slate-600">
+                    "Grâce à GAELIS, nous participons aux conseils centraux pour voter les budgets et les règlements d'examen qui t'impactent directement."
+                </div>
+            </section>
+            
+            <section class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-red-50 rounded-2xl">
+                    <h3 class="font-bold text-xl mb-3">L'AGORA : Épicerie Solidaire</h3>
+                    <p class="text-sm text-slate-600">L'accès à une alimentation saine et à prix réduit pour les étudiants en difficulté. Le BDE t'oriente vers les permanences.</p>
+                </div>
+                <div class="p-6 bg-red-50 rounded-2xl">
+                    <h3 class="font-bold text-xl mb-3">Défense des Droits</h3>
+                    <p class="text-sm text-slate-600">Problème de notation ? Bourse CROUS suspendue ? Nous t'accompagnons dans tes démarches administratives et tes recours.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-3xl font-black text-bordeaux mb-6 uppercase italic">Tes Élus Étudiants</h2>
+                <div class="overflow-hidden rounded-2xl shadow-lg relative group">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex items-end p-8 text-white">
+                        <p class="font-bold">Congrès National des Élus - Représentation de l'IUT Lyon 1</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="space-y-8">
+            <div class="bg-slate-900 text-white p-8 rounded-3xl sticky top-24">
+                <h3 class="text-2xl font-bold mb-6 italic uppercase">Guide de survie</h3>
+                <ul class="space-y-6">
+                    <li class="flex gap-4">
+                        <span class="text-3xl text-bordeaux font-black">01</span>
+                        <div>
+                            <p class="font-bold">Contester une note</p>
+                            <p class="text-xs text-slate-400">Tu as 2 mois pour agir après la publication officielle.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-3xl text-bordeaux font-black">02</span>
+                        <div>
+                            <p class="font-bold">Aides d'urgence</p>
+                            <p class="text-xs text-slate-400">Contacte l'assistante sociale du CROUS via le BDE.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-3xl text-bordeaux font-black">03</span>
+                        <div>
+                            <p class="font-bold">Logement (APL)</p>
+                            <p class="text-xs text-slate-400">N'attends pas ton premier loyer pour faire ta demande CAF !</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+    <footer class="bg-slate-900 text-white py-12 border-t-4 border-bordeaux">
+        <div class="container mx-auto px-4 text-center">
+            <img src="BIGG_BDE.png" class="h-20 mx-auto mb-6 grayscale brightness-200 opacity-50">
+            <p class="font-bold text-lg mb-2">Fédération des BDE de l'IUT Lyon 1</p>
+            <p class="text-slate-500 text-sm mb-8 italic">Bourg-en-Bresse : BIO - INFO - GEA - MT2E</p>
+            <div class="flex justify-center gap-8 text-sm font-medium mb-8">
+                <a href="https://www.instagram.com/bigg_bde/" class="hover:text-bordeaux transition">Instagram</a>
+                <a href="https://www.helloasso.com/associations/bigg-bde" class="hover:text-bordeaux transition">HelloAsso</a>
+                <a href="contact.html" class="hover:text-bordeaux transition">Nous trouver</a>
+            </div>
+            <a href="admin.html" class="text-[10px] text-slate-700 hover:text-slate-300 transition uppercase tracking-widest">Accès Sécurisé</a>
+        </div>
+    </footer>
+</body>
+</html>

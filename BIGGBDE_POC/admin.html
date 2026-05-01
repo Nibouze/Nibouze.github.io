@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration | BIGG BDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bordeaux: #800000; --bordeaux-light: #a52a2a; }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .text-bordeaux { color: var(--bordeaux); }
+        .btn-bordeaux { background-color: var(--bordeaux); color: white; transition: all 0.3s; }
+        .btn-bordeaux:hover { background-color: var(--bordeaux-light); transform: translateY(-2px); }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
+    <nav class="bg-bordeaux text-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="BIGG_BDE.png" alt="BIGG" class="h-12 w-12 rounded-full border-2 border-white bg-white">
+                <span class="font-black text-2xl tracking-tighter uppercase italic">BIGG BDE</span>
+            </a>
+            <ul class="hidden lg:flex gap-4 font-bold uppercase text-sm">
+                <li><a href="index.html" class="px-3 py-2 transition hover:opacity-75">Accueil</a></li><li><a href="evenements.html" class="px-3 py-2 transition hover:opacity-75">Événements</a></li><li><a href="actu.html" class="px-3 py-2 transition hover:opacity-75">Actu</a></li><li><a href="partenariats.html" class="px-3 py-2 transition hover:opacity-75">Partenariats</a></li><li><a href="representation.html" class="px-3 py-2 transition hover:opacity-75">Représentation</a></li><li><a href="liens.html" class="px-3 py-2 transition hover:opacity-75">Liens</a></li><li><a href="contact.html" class="px-3 py-2 transition hover:opacity-75">Contact</a></li>
+            </ul>
+            <button class="lg:hidden text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-red-950 p-4 space-y-4 text-center border-t border-red-900">
+            <li><a href="index.html" class="block py-3 transition hover:opacity-75">Accueil</a></li><li><a href="evenements.html" class="block py-3 transition hover:opacity-75">Événements</a></li><li><a href="actu.html" class="block py-3 transition hover:opacity-75">Actu</a></li><li><a href="partenariats.html" class="block py-3 transition hover:opacity-75">Partenariats</a></li><li><a href="representation.html" class="block py-3 transition hover:opacity-75">Représentation</a></li><li><a href="liens.html" class="block py-3 transition hover:opacity-75">Liens</a></li><li><a href="contact.html" class="block py-3 transition hover:opacity-75">Contact</a></li>
+        </div>
+    </nav>
+    <main class="flex-grow">
+<div id="admin-login" class="min-h-[80vh] flex items-center justify-center p-4">
+    <div class="bg-white p-10 rounded-[40px] shadow-2xl w-full max-w-md border-t-8 border-bordeaux">
+        <h1 class="text-3xl font-black italic uppercase text-center mb-8">Espace Bureau</h1>
+        <div class="space-y-4">
+            <input type="text" id="admin-user" placeholder="Utilisateur" class="w-full p-4 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-bordeaux outline-none font-bold">
+            <input type="password" id="admin-pass" placeholder="Mot de passe" class="w-full p-4 bg-slate-50 rounded-xl border-none focus:ring-2 focus:ring-bordeaux outline-none font-bold">
+            <button onclick="doLogin()" id="btn-login" class="w-full btn-bordeaux py-4 rounded-xl font-black uppercase tracking-widest">Entrer</button>
+        </div>
+    </div>
+</div>
+
+<div id="admin-panel" class="hidden container mx-auto px-4 py-20 max-w-4xl">
+    <div class="flex justify-between items-end mb-12">
+        <h1 class="text-5xl font-black italic uppercase">Admin Dashboard</h1>
+        <button onclick="location.reload()" class="text-red-600 font-bold uppercase text-xs">Déconnexion</button>
+    </div>
+
+    <!-- WIZARD STEP 1 -->
+    <div id="step-1" class="space-y-8">
+        <h2 class="text-2xl font-bold bg-slate-900 text-white inline-block px-4 py-1 skew-x-[-10deg]">ÉTAPE 1 : Que veux-tu ajouter ?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button onclick="goStep2('event')" class="p-8 bg-white rounded-3xl shadow hover:shadow-xl transition-all border-2 border-transparent hover:border-bordeaux group">
+                <span class="text-4xl block mb-2">🔥</span>
+                <span class="font-bold uppercase text-xs">Événement</span>
+            </button>
+            <button onclick="goStep2('actu')" class="p-8 bg-white rounded-3xl shadow hover:shadow-xl transition-all border-2 border-transparent hover:border-bordeaux group">
+                <span class="text-4xl block mb-2">📢</span>
+                <span class="font-bold uppercase text-xs">Actualité</span>
+            </button>
+            <button onclick="goStep2('part')" class="p-8 bg-white rounded-3xl shadow hover:shadow-xl transition-all border-2 border-transparent hover:border-bordeaux group">
+                <span class="text-4xl block mb-2">🤝</span>
+                <span class="font-bold uppercase text-xs">Partenaire</span>
+            </button>
+            <button onclick="goStep2('link')" class="p-8 bg-white rounded-3xl shadow hover:shadow-xl transition-all border-2 border-transparent hover:border-bordeaux group">
+                <span class="text-4xl block mb-2">🔗</span>
+                <span class="font-bold uppercase text-xs">Lien Utile</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- WIZARD STEP 2 -->
+    <div id="step-2" class="hidden space-y-8">
+        <div class="flex items-center gap-4">
+            <button onclick="resetWizard()" class="text-slate-400 hover:text-bordeaux font-black">← RETOUR</button>
+            <h2 class="text-2xl font-bold bg-bordeaux text-white inline-block px-4 py-1 skew-x-[-10deg]">ÉTAPE 2 : Infos du contenu</h2>
+        </div>
+        
+        <div id="form-container" class="bg-white p-10 rounded-3xl shadow-xl space-y-6">
+            <!-- Dynamic fields go here -->
+        </div>
+        <button onclick="generateCode()" class="w-full btn-bordeaux py-5 rounded-2xl font-black uppercase text-xl">Valider & Générer le code</button>
+    </div>
+
+    <!-- WIZARD STEP 3 -->
+    <div id="step-3" class="hidden space-y-8">
+        <h2 class="text-2xl font-bold bg-green-600 text-white inline-block px-4 py-1 skew-x-[-10deg]">ÉTAPE 3 : Copie le code !</h2>
+        <div class="bg-slate-900 p-8 rounded-3xl">
+            <p class="text-slate-400 text-sm mb-4 italic">// Copie ce bloc et colle-le dans ton fichier .html correspondant :</p>
+            <textarea id="result-code" readonly class="w-full h-64 bg-black/50 text-green-400 font-mono p-4 rounded-xl border border-white/10"></textarea>
+        </div>
+        <button onclick="resetWizard()" class="w-full bg-slate-200 py-4 rounded-xl font-bold uppercase">Créer un autre contenu</button>
+    </div>
+</div>
+
+<script>
+    const USERS = {{ "admin": "bigg2025", "bureau": "bigg2025" }};
+    let currentType = '';
+
+    // Handle Enter Key
+    document.addEventListener('keypress', (e) => {{
+        if (e.key === 'Enter') {{
+            if (!document.getElementById('admin-login').classList.contains('hidden')) doLogin();
+        }}
+    }});
+
+    function doLogin() {{
+        const u = document.getElementById('admin-user').value;
+        const p = document.getElementById('admin-pass').value;
+        if (USERS[u] === p) {{
+            document.getElementById('admin-login').classList.add('hidden');
+            document.getElementById('admin-panel').classList.remove('hidden');
+        }} else {{
+            alert("Erreur d'accès."); // Generic error as requested
+        }}
+    }}
+
+    function goStep2(type) {{
+        currentType = type;
+        const cont = document.getElementById('form-container');
+        cont.innerHTML = '';
+        
+        if(type === 'part') {{
+            cont.innerHTML = `
+                <input id="f1" placeholder="Nom du partenaire (ex: JL Bourg)" class="w-full p-4 border rounded-xl">
+                <input id="f2" placeholder="Lieu (ex: Bourg-en-Bresse)" class="w-full p-4 border rounded-xl">
+                <input id="f3" placeholder="Offre (ex: -20% sur le menu)" class="w-full p-4 border rounded-xl">
+                <input id="f4" placeholder="Durée (ex: Saison 2025)" class="w-full p-4 border rounded-xl">
+                <input id="f5" placeholder="Emoji (ex: 🏀)" class="w-full p-4 border rounded-xl">
+            `;
+        }} else if(type === 'event') {{
+            cont.innerHTML = `
+                <input id="f1" placeholder="Nom de la soirée" class="w-full p-4 border rounded-xl">
+                <input id="f2" placeholder="Date" class="w-full p-4 border rounded-xl">
+                <textarea id="f3" placeholder="Description courte" class="w-full p-4 border rounded-xl"></textarea>
+            `;
+        }} else if(type === 'link') {{
+            cont.innerHTML = `
+                <input id="f1" placeholder="Nom du bouton" class="w-full p-4 border rounded-xl">
+                <input id="f2" placeholder="Lien (URL)" class="w-full p-4 border rounded-xl">
+                <input id="f3" placeholder="Emoji" class="w-full p-4 border rounded-xl">
+            `;
+        }}
+        
+        document.getElementById('step-1').classList.add('hidden');
+        document.getElementById('step-2').classList.remove('hidden');
+    }}
+
+    function generateCode() {{
+        const f1 = document.getElementById('f1')?.value || '';
+        const f2 = document.getElementById('f2')?.value || '';
+        const f3 = document.getElementById('f3')?.value || '';
+        const f4 = document.getElementById('f4')?.value || '';
+        const f5 = document.getElementById('f5')?.value || '';
+        
+        let html = '';
+        if(currentType === 'part') {{
+            html = `<!-- PARTENAIRE: ${{f1}} -->
+<div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-slate-100 hover:border-bordeaux transition-all group">
+    <div class="h-48 bg-slate-200 flex items-center justify-center text-6xl group-hover:bg-red-50 transition">${{f5}}</div>
+    <div class="p-8">
+        <div class="flex justify-between items-start mb-4">
+            <h3 class="text-2xl font-black uppercase italic">${{f1}}</h3>
+            <span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-1 rounded">ACTIF</span>
+        </div>
+        <p class="text-slate-400 text-xs mb-2 flex items-center gap-1">📍 ${{f2}}</p>
+        <div class="bg-bordeaux/5 p-4 rounded-xl mb-4 border border-bordeaux/10">
+            <p class="text-bordeaux font-bold text-lg">${{f3}}</p>
+        </div>
+        <p class="text-[10px] text-slate-400 uppercase tracking-widest">${{f4}}</p>
+    </div>
+</div>`;
+        }} else if(currentType === 'link') {{
+            html = `<a href="${{f2}}" class="bg-white aspect-square flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all border-b-8 border-bordeaux">
+    <span class="text-4xl mb-4">${{f3}}</span>
+    <span class="font-bold uppercase tracking-tighter text-center">${{f1}}</span>
+</a>`;
+        }}
+
+        document.getElementById('result-code').value = html;
+        document.getElementById('step-2').classList.add('hidden');
+        document.getElementById('step-3').classList.remove('hidden');
+    }}
+
+    function resetWizard() {{
+        document.getElementById('step-1').classList.remove('hidden');
+        document.getElementById('step-2').classList.add('hidden');
+        document.getElementById('step-3').classList.add('hidden');
+    }}
+</script>
+</main>
+    <footer class="bg-slate-900 text-white py-12 border-t-4 border-bordeaux">
+        <div class="container mx-auto px-4 text-center">
+            <img src="BIGG_BDE.png" class="h-20 mx-auto mb-6 grayscale brightness-200 opacity-50">
+            <p class="font-bold text-lg mb-2">Fédération des BDE de l'IUT Lyon 1</p>
+            <p class="text-slate-500 text-sm mb-8 italic">Bourg-en-Bresse : BIO - INFO - GEA - MT2E</p>
+            <div class="flex justify-center gap-8 text-sm font-medium mb-8">
+                <a href="https://www.instagram.com/bigg_bde/" class="hover:text-bordeaux transition">Instagram</a>
+                <a href="https://www.helloasso.com/associations/bigg-bde" class="hover:text-bordeaux transition">HelloAsso</a>
+                <a href="contact.html" class="hover:text-bordeaux transition">Nous trouver</a>
+            </div>
+            <a href="admin.html" class="text-[10px] text-slate-700 hover:text-slate-300 transition uppercase tracking-widest">Accès Sécurisé</a>
+        </div>
+    </footer>
+</body>
+</html>
