@@ -17,57 +17,56 @@
         <script type="text/javascript">
             $(document).ready(function () {
             $('.navbar-light .dmenu').hover(function () {
-                    $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+                    $(this).find('.sm-menu').first().stop(true, false).slideDown(95);
                 }, function () {
-                    $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+                    $(this).find('.sm-menu').first().stop(true, true).slideUp(55)
                 });
             });
-            </script>
-        <!-- Style Specification -->
+        </script>
         <link rel="stylesheet" href="../../fichiers/style/style.css">
     </head>
 
-    <body>
+
+    <header>
         <nav class="navbar navbar-expand-sm   navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../salon/"><b>AntoStudio</b> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown dmenu">
+                        <a class="nav-link dropdown-toggle" href="../../chambres/" id="navbardrop" data-toggle="dropdown">
+                        Chambres</a>
+                            <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="../../chambres/photographie">01 - Photographie</a>
+                                <a class="dropdown-item" href="../../chambres/codage">02 - Codage</a>
+                                <a class="dropdown-item" href="../../chambres/ma-chambre">03 - Ma Chambre</a>
+                                <a class="dropdown-item" href="../../chambres/prochainement">04 - Prochainement</a>
+                            </div>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../salon/"><b>AntoStudio</b> <span class="sr-only">(current)</span></a>
-                </li>
-
-            <li class="nav-item dropdown dmenu">
-                <a class="nav-link dropdown-toggle" href="../../chambres/" id="navbardrop" data-toggle="dropdown">
-                Chambres</a>
-                    <div class="dropdown-menu sm-menu">
-                        <a class="dropdown-item" href="../../chambres/photographie">01 - Photographie</a>
-                        <a class="dropdown-item" href="../../chambres/codage">02 - Codage</a>
-                        <a class="dropdown-item" href="../../chambres/ma-chambre">03 - Ma Chambre</a>
-                        <a class="dropdown-item" href="../../chambres/prochainement">04 - Prochainement</a>
-                    </div>
-            </li>
-
-            <li class="nav-item dropdown dmenu">
-                <a class="nav-link dropdown-toggle" href="../../pieces/" id="navbardrop" data-toggle="dropdown">
-                Pièces</a>
-                <div class="dropdown-menu sm-menu">
-                <a class="dropdown-item" href="../cuisine/">Cuisine</a>
-                <a class="dropdown-item" href="../salon/">Salon</a>
-                <a class="dropdown-item" href="../balcon/">Balcon</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-
-          </ul>
-        </div>
+                    <li class="nav-item dropdown dmenu">
+                        <a class="nav-link dropdown-toggle" href="../../pieces/" id="navbardrop" data-toggle="dropdown">
+                        Pièces</a>
+                        <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="../cuisine/">Cuisine</a>
+                        <a class="dropdown-item" href="../salon/">Salon</a>
+                        <a class="dropdown-item" href="../balcon/">Balcon</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        
-            <br>
+    </header>
+
+    <body>
+        <br>
         <p>Bienvenue dans le Salon !
         <br>Naviguer à travers le Studio :</p>
         <ul>

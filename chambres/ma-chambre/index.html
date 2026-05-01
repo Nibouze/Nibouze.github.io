@@ -6,40 +6,65 @@
         <title>Ma Chambre - AntoStudio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../fichiers/style/style.css">
         <script src="../../fichiers/scripts/script.js" async defer></script>
+        <!-- Bootstrap CSS and JS -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+            $('.navbar-light .dmenu').hover(function () {
+                    $(this).find('.sm-menu').first().stop(true, false).slideDown(95);
+                }, function () {
+                    $(this).find('.sm-menu').first().stop(true, true).slideUp(55)
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="../../fichiers/style/style.css">
     </head>
+
+    <header>
+        <nav class="navbar navbar-expand-sm   navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../salon/"><b>AntoStudio</b> <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown dmenu">
+                        <a class="nav-link dropdown-toggle" href="../../chambres/" id="navbardrop" data-toggle="dropdown">
+                        Chambres</a>
+                            <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="../../chambres/photographie">01 - Photographie</a>
+                                <a class="dropdown-item" href="../../chambres/codage">02 - Codage</a>
+                                <a class="dropdown-item" href="../../chambres/ma-chambre">03 - Ma Chambre</a>
+                                <a class="dropdown-item" href="../../chambres/prochainement">04 - Prochainement</a>
+                            </div>
+                    </li>
+
+                    <li class="nav-item dropdown dmenu">
+                        <a class="nav-link dropdown-toggle" href="../../pieces/" id="navbardrop" data-toggle="dropdown">
+                        Pièces</a>
+                        <div class="dropdown-menu sm-menu">
+                        <a class="dropdown-item" href="../cuisine/">Cuisine</a>
+                        <a class="dropdown-item" href="../salon/">Salon</a>
+                        <a class="dropdown-item" href="../balcon/">Balcon</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <body>
-        <div class="nav-bar" style="margin: 10px; background-color: rgb(219, 237, 255);">
-            <p>NAV BAR LINKS</p>
-            <ul class="nav-links">
-                <li><a href="../../chambres/">Chambres</a></li>
-                <ul>
-                    <li><a href="../../chambres/photographie">Chambre 01 - Photographie</a></li>
-                    Dans cette chambre vous retrouverez le matos que j'utilise, mon porfolio et les BTS de certains shoots !
-
-                    <li><a href="../../chambres/codage">Chambre 02 - Codage</a></li>
-                    Ici se trouvent les projets de développement sur lesquels j'ai bosser, en open-soure bien-sûr.
-                    
-                    <li><a href="../../chambres/ma-chambre">Chambre 03 - Ma Chambre</a></li>
-                    J'ai pas trop rangé, mais vous pouvez trouver mes contacts, quelques infos et mon CV
-                    
-                    <li><a href="../../chambres/prochainement">Chambre 04 - Prochainement</a></li>
-                    Pièce en construction...
-                </ul>
-                <li><a href="../../pieces/">Pièces</a></li>
-                <ul>
-                    <li><a href="../../pieces/cuisine/">Cuisine</a></li>
-                    Nouveautés et informations
-                    <li><a href="../../pieces/salon/">Salon</a></li>
-                    Vue d'ensemble des pièces du Studio
-                    <li><a href="../../pieces/balcon/">Balcon</a></li>
-                    Prendre l'air frais 
-                </ul>
-                <li><a href="../../">Sortir du Studio</a></li>
-            </ul>
-        </div>
-
         <p>Bienvenue dans ma chambre !</p>
         <ul>
             <li><a href="mailto:atep.office@gmail.com">M'envoyer un mail</a></li>
